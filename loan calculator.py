@@ -56,5 +56,5 @@ def get_loan_portion(loan_amount, loan_len_year, rate, paid_len_year):
     return presentv
 
 # an example: 300K loan in 15 years with rate of 3.5%
-get_loan_portion(300000, 15, 3.5, 7.5)
+get_loan_portion(400000, 15, 3.5, 7.5)
 
