@@ -15,7 +15,7 @@ def get_month_pay(loan_amount, loan_len_year, rate):
     """
     if rate<1:
         rate_pct=rate*100
-        mr=rate/12  #get monthly rate
+        mr=rate/12  # convert annual rate to monthly rate
     elif rate>=1:
         rate_pct=rate
         mr=rate*0.01/12
@@ -56,5 +56,5 @@ def get_loan_portion(loan_amount, loan_len_year, rate, paid_len_year):
     return presentv
 
 # an example: 300K loan in 15 years with rate of 3.5%
-get_loan_portion(400000, 15, 3.5, 7.5)
+get_loan_portion(300000, 15, 3.5, 7.5)
 
