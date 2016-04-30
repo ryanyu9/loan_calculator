@@ -19,7 +19,7 @@ def get_month_pay(loan_amount, loan_len_year, rate):
     elif rate>=1:
         rate_pct=rate
         mr=rate*0.01/12
-    nm=loan_len_year*12  #get number of payments
+    nm=loan_len_year*12  # get number of payments
     month_pay=(mr*loan_amount*(1+mr)**nm)/((1+mr)**nm-1)
     print("Monthly payment for loan of "+"${:,.2f}".format(loan_amount)+", "+str(loan_len_year)+
           " years, rate of "+str(rate_pct)+"%:")
@@ -37,14 +37,14 @@ def get_loan_portion(loan_amount, loan_len_year, rate, paid_len_year):
     """
     mp=get_month_pay(loan_amount, loan_len_year, rate)
     if rate<1:
-        mr=rate/12  #get monthly rate
+        mr=rate/12  # convert annual rate to monthly rate
     elif rate>=1:
         mr=rate*0.01/12
     nm_rest=(loan_len_year-paid_len_year)*12
     nm_total=loan_len_year*12
-    presentv_total=mp*((1-1/(1+mr)**nm_total)/mr) #total present value=loan
+    presentv_total=mp*((1-1/(1+mr)**nm_total)/mr) # total present value=loan
     presentv_rest=mp*((1-1/(1+mr)**nm_rest)/mr) 
-    presentv=presentv_total-presentv_rest #get the true present value of last number of years payment
+    presentv=presentv_total-presentv_rest # get the true present value of last number of years payment
     int_paid=mp*12*paid_len_year-presentv
     print("After "+str(paid_len_year)+" years, your out of pocket money is:")
     print("${:,.2f}".format(mp*12*paid_len_year)+"\n")
