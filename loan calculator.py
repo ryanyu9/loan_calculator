@@ -26,7 +26,6 @@ def get_month_pay(loan_amount, loan_len_year, rate):
     print("${:,.2f}".format(month_pay)+"\n")
     return month_pay
 
-
 def get_loan_portion(loan_amount, loan_len_year, rate, paid_len_year):
     """
     Monthly payment can be divided into two portions: paying loan and
@@ -57,4 +56,3 @@ def get_loan_portion(loan_amount, loan_len_year, rate, paid_len_year):
 
 # an example: 300K loan in 15 years with rate of 3.5%
 get_loan_portion(300000, 15, 3.5, 7.5)
-
